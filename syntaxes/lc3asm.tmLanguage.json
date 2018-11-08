@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "LC3 Assembly",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.lc3asm",
+					"match": "\\b(BR|BRn|BRz|BRp|BRnz|BRnp|BRzp|BRnzp|JMP|RET|JSR|JSRR|RTI|TRAP)\\b"
+				},
+				{
+					"name": "entity.name.function.logimaths.lc3asm",
+					"match": "\\b(NOT|AND|ADD)\\b"
+				},
+				{
+					"name": "storage.operation.datamv.lc3asm",
+					"match": "\\b(LD|LDR|LDI|ST|STR|STI|LEA)\\b"
+				},
+				{
+					"name": "keyword.pseudoop.lc3asm",
+					"match": "\\b(ORIG|FILL|BLKW|STRINGZ|END)\\b"
+				},
+				{
+					"name": "variable.register.lc3asm",
+					"match": "\\b(R0|R1|R2|R3|R4|R5|R6|R7)\\b"
+				},
+				{
+					"name": "comment.line.lc3asm",
+					"begin": ";",
+					"end": "\n"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.lc3asm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.lc3asm",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.asm"
+}
