@@ -2,7 +2,7 @@
     "name": "lc3-assembly",
     "displayName": "LC3 Assembly",
     "description": "Syntax highlighting for LC3 assembly language used in computer engineering education.",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "PaperFanz",
     "repository": {
         "type": "Github",
@@ -15,17 +15,26 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "lc3asm",
-            "aliases": ["LC3 Assembly", "lc3asm"],
-            "extensions": [".asm"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "lc3asm",
-            "scopeName": "source.asm",
-            "path": "./syntaxes/lc3asm.tmLanguage.json"
-        }],
+        "languages": [
+            {
+                "id": "lc3asm",
+                "aliases": [
+                    "LC3 Assembly",
+                    "lc3asm"
+                ],
+                "extensions": [
+                    ".asm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lc3asm",
+                "scopeName": "source.asm",
+                "path": "./syntaxes/lc3asm.tmLanguage.json"
+            }
+        ],
         "colors": []
     }
 }
