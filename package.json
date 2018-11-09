@@ -2,11 +2,12 @@
     "name": "lc3-assembly",
     "displayName": "LC3 Assembly",
     "description": "Syntax highlighting for LC3 assembly language used in computer engineering education.",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "icon": "lc3-assembly-icon.png",
     "publisher": "PaperFanz",
     "repository": {
         "type": "Github",
-        "url": ""
+        "url": "https://github.com/PaperFanz/lc3-assembly-vscode-ext"
     },
     "engines": {
         "vscode": "^1.18.0"
