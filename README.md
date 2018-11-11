@@ -1,6 +1,6 @@
 # lc3-assembly README
 
-Basic syntax highlighting support for the LC3 assembly language used by the UT ECE department for educational purposes. I made this because looking at dull white on dark grey text was making me go blind.
+Basic syntax highlighting and snippets for the LC3 assembly language used by the UT ECE department for educational purposes. I made this because looking at dull white on dark grey text was making me go blind.
 
 Recommended themes:
 
@@ -14,14 +14,15 @@ VSCode 1.18.0 or up.
 
 ## Known Issues
 
-No snippets yet, planning to add in the future.
-
 ## Release Notes
 
-Initial release.
+### 1.2.9
+
+- Snippets for most common opcodes added
+- RTI excluded due to there being nothing to specify other than the opcode itself
 
 ### 1.0.0
 
-Initial release.
+- Initial release.
 
 **Enjoy!**
