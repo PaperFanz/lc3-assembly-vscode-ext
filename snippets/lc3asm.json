@@ -1,0 +1,146 @@
+{
+    "Add two registers": {
+        "prefix":[
+            "ADD",
+            "add"
+        ],
+        "body": "ADD\t${1:dest}\t${2:src1}\t${3:src2}$0",
+        "description": "ADD two registers and put the result in the destination register."
+    },
+    "Add a register and an immediate value": {
+        "prefix":[
+            "ADDimm",
+            "addimm"
+        ],
+        "body": "ADD\t${1:dest}\t${2:src1}\t${3:imm5}$0",
+        "description": "ADD a register and an immediate value between -16 and 15 and put the result in the destination register."
+    },
+    "And two registers": {
+        "prefix":[
+            "AND",
+            "and"
+        ],
+        "body": "AND\t${1:dest}\t${2:src1}\t${3:src2}$0",
+        "description": "AND two registers and put the result in the destination register."
+    },
+    "And a register and an immediate value": {
+        "prefix":[
+            "AND",
+            "and"
+        ],
+        "body": "AND\t${1:dest}\t${2:src1}\t${3:imm5}$0",
+        "description": "AND a register and an immediate value between -16 and 15 and put the result in the destination register."
+    },
+    "Not a register": {
+        "prefix": [
+            "NOT",
+            "not"
+        ],
+        "body": "NOT\t${1:dest}\t${2:src}$0",
+        "description": "NOT a register and put the result in the destination register."
+    },
+    "Load": {
+        "prefix": [
+            "LD",
+            "ld"
+        ],
+        "body": "LD\t${1:dest}\t${2:PCoffset9}$0",
+        "description": "Load the contents of the memory address specified by the PC plus an offset value between -256 and 255 to the destination register."
+    },
+    "Load relative": {
+        "prefix": [
+            "LDR",
+            "ldr"
+        ],
+        "body": "LDR\t${1:dest}\t${2:base}\t${3:offset6}$0",
+        "description": "Load the contents of the memory address specified by the memory address given in the base register plus an offest value between -64 and 63 to the desitnation register."
+    },
+    "Load immediate": {
+        "prefix": [
+            "LDI",
+            "ldi"
+        ],
+        "body": "LD\t${1:dest}\t${2:PCoffset9}$0",
+        "description": "Load the contents of the memory address specified by the value stored at the memory address pointed to by the PC plus an offset value between -256 and 255 to the destination register."
+    },
+    "Store": {
+        "prefix": [
+            "ST",
+            "st"
+        ],
+        "body": "ST\t${1:src}\t${2:PCoffset9}$0",
+        "description": "Store the contents of the source register to the memory address specified by the PC plus an offset value between -256 and 255."
+    },
+    "Store relative": {
+        "prefix": [
+            "STR",
+            "str"
+        ],
+        "body": "STR\t${1:src}\t${2:base}\t${3:offset6}$0",
+        "description": "Store the contents of the source register to the memory address specified by the memory address given in the base register plus an offest value between -64 and 63."
+    },
+    "Store immediate": {
+        "prefix": [
+            "STI",
+            "sti"
+        ],
+        "body": "STI\t${1:src}\t${2:PCoffset9}$0",
+        "description": "Store the contents of the source register to the memory address specified by the value stored at the memory address pointed to by the PC plus an offset value between -256 and 255."
+    },
+    "Load effective address": {
+        "prefix": [
+            "LEA",
+            "lea"
+        ],
+        "body": "LEA\t${1:dest}\t${2:PCoffset9}$0",
+        "description": "Load the memory address specified by the PC plus an offset value between -256 and 255. (NOTE: NOT the value stored, the actual address)"
+    },
+    "Break": {
+        "prefix": [
+            "BR",
+            "br"
+        ],
+        "body": "BR${1:nzp}\t${2:PCoffset9}$0",
+        "description": "Sets the PC to the memory address specified by the PC plus an offset value between -256 and 255 if the condition codes in the PSR match the operation statement."
+    },
+    "Jump": {
+        "prefix": [
+            "JMP",
+            "jmp"
+        ],
+        "body": "JMP\t${1:src}$0",
+        "description": "Sets the PC to the value stored in the specified source register."
+    },
+    "Return": {
+        "prefix": [
+            "RET",
+            "ret"
+        ],
+        "body": "RET$0",
+        "description": "Sets the PC to the value stored in register 7."
+    },
+    "Jump to subroutine": {
+        "prefix": [
+            "JSR",
+            "jsr"
+        ],
+        "body": "JSR\t${1:PCoffset11}$0",
+        "description": "Stores the current PC into register 7 and sets the PC to the address specified by the current PC plus an offset value between -1024 and 1023."
+    },
+    "Jump to sobroutine register":{
+        "prefix": [
+            "JSRR",
+            "jsrr"
+        ],
+        "body": "JSRR\t${1:src}$0",
+        "description": "Stores the current PC into register 7 and sets the PC to the value of the specified source register."
+    },
+    "System call":  {
+        "prefix": [
+            "TRAP",
+            "trap"
+        ],
+        "body": "TRAP\t${1:trapvect}$0",
+        "description": "Call one of the available subroutines. Available trapvect values are: x20, x21, x22, x23, and x25, corresponding to GETC, OUT, PUTS, IN, and HALT."
+    }
+}

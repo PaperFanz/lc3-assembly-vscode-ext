@@ -2,7 +2,7 @@
     "name": "lc3-assembly",
     "displayName": "LC3 Assembly",
     "description": "Syntax highlighting for LC3 assembly language used in computer engineering education.",
-    "version": "1.0.1",
+    "version": "1.2.0",
     "icon": "lc3-assembly-icon.png",
     "publisher": "PaperFanz",
     "repository": {
@@ -36,6 +36,11 @@
                 "path": "./syntaxes/lc3asm.tmLanguage.json"
             }
         ],
-        "colors": []
+        "snippets": [
+            {
+                "language": "lc3asm",
+                "path": "./snippets/lc3asm.json"
+            }
+        ]
     }
 }
