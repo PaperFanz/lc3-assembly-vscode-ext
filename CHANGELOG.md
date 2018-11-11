@@ -4,6 +4,10 @@
 
 - Advanced snippets
 
+## [1.2.1] 11-11-18
+
+- Added commas to snippets where needed
+
 ## [1.2.0] 11-11-18
 
 - Snippets for 14 opcodes implemented (RTI intentionally left out)

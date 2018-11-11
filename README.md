@@ -4,6 +4,8 @@ Basic syntax highlighting and snippets for the LC3 assembly language used by the
 
 Recommended themes:
 
+[IBM Dark (also by me)](https://marketplace.visualstudio.com/itemsitemName=PaperFanz.ibm-color-palette-color-scheme)
+
 ## Features
 
 This really isn't cool enough to justify any screenshots, and also it'll look different depending on what color theme you end up choosing. Just download it and see if it helps you not contemplate suicide when coding in assembly.
@@ -16,7 +18,7 @@ VSCode 1.18.0 or up.
 
 ## Release Notes
 
-### 1.2.9
+### 1.2.0
 
 - Snippets for most common opcodes added
 - RTI excluded due to there being nothing to specify other than the opcode itself
