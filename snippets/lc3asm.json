@@ -135,12 +135,44 @@
         "body": "JSRR\t${0:src}",
         "description": "Stores the current PC into register 7 and sets the PC to the value of the specified source register."
     },
-    "System call":  {
+    "System call": {
         "prefix": [
             "TRAP",
             "trap"
         ],
-        "body": "TRAP\t${0:trapvect}",
+        "body": "TRAP\tx${0:trapvect}",
         "description": "Call one of the available subroutines. Available trapvect values are: x20, x21, x22, x23, and x25, corresponding to GETC, OUT, PUTS, IN, and HALT."
+    },
+    "Origin and End": {
+        "prefix": [
+            ".ORIG",
+            ".orig"
+        ],
+        "body": ".ORIG\tx${1:3000}\n\t$0\n.END",
+        "description": "Tells the assembler where the program begins and ends."
+    },
+    "Fill": {
+        "prefix": [
+            ".FILL",
+            ".fill"
+        ],
+        "body": ".FILL\t${0:fill}",
+        "description": "Fills the memory location with the value specifiec."
+    },
+    "String": {
+        "prefix": [
+            ".STRINGZ",
+            ".stringz"
+        ],
+        "body": ".STRINGZ\t\"${0:string}\"",
+        "description": "Creates a null-terminated string starting at the location of the command. Note that this will take up n+1 memory locations given a string of size n."
+    },
+    "Block Word": {
+        "prefix": [
+            ".BLKW",
+            ".blkw"
+        ],
+        "body": ".BLKW\t${0:1}",
+        "description": "Sets aside the specified number of memory locations for use later. Often used with labels."
     }
 }

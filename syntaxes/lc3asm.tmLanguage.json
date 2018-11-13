@@ -14,7 +14,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.lc3asm",
-					"match": "\\b(BR|BRn|BRz|BRp|BRnz|BRnp|BRzp|BRnzp|JMP|RET|JSR|JSRR|RTI|TRAP)\\b"
+					"match": "\\b(BR|BRn|BRz|BRp|BRnz|BRnp|BRzp|BRnzp|JMP|RET|JSR|JSRR|RTI)\\b"
+				},
+				{
+					"name": "support.other.lc3asm",
+					"match": "\\b(TRAP|GETC|OUT|PUTS|IN|HALT)\\b"
 				},
 				{
 					"name": "entity.name.function.logimaths.lc3asm",

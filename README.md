@@ -29,6 +29,7 @@ VSCode 1.18.0 or up.
 ### 1.3.0
 
 - Snippet support complete (RTI still excluded)
+- Pseudo-op snippets added
 
 ### 1.2.0
 

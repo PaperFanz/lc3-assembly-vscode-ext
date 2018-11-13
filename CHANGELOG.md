@@ -2,7 +2,11 @@
 
 ## [Unreleased]
 
-- Advanced snippets
+- Assembler utility
+
+## [1.3.1] 11-13-18
+
+- Snippet support for pseudo-ops
 
 ## [1.3.0] 11-12-18
 
