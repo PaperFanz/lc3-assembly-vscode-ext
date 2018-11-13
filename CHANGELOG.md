@@ -4,6 +4,11 @@
 
 - Advanced snippets
 
+## [1.3.0] 11-12-18
+
+- Improve snippet tab completion options
+- Update README with usage instructions
+
 ## [1.2.1] 11-11-18
 
 - Added commas to snippets where needed
