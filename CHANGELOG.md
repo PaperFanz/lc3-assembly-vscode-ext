@@ -4,6 +4,13 @@
 
 - Assembler utility
 
+## [1.4.0] 11-14-18
+
+- Snippet for RTI added
+- Snippet descriptions edited to be more concise, describes register-level changes
+- Label highlighting added
+- Hexadecimal and decimal numerical constant highlighting added
+
 ## [1.3.1] 11-13-18
 
 - Snippet support for pseudo-ops

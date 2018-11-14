@@ -26,6 +26,12 @@ VSCode 1.18.0 or up.
 
 ## Release Notes
 
+### 1.4.0
+
+- Snippet descriptions updated to be more concise
+- Label highlighting added
+- numerical constant hihglighting added
+
 ### 1.3.0
 
 - Snippet support complete (RTI still excluded)

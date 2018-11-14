@@ -40,6 +40,18 @@
 					"name": "comment.line.lc3asm",
 					"begin": ";",
 					"end": "\n"
+				},
+				{
+					"name": "constant.numeric.hex",
+					"match": "[x][0-9]+"
+				},
+				{
+					"name": "constant.numeric.dec",
+					"match": "[0-9]+"
+				},
+				{
+					"name": "support.variable.lc3asm",
+					"match": "[A-Za-z][A-Za-z0-9]"
 				}
 			]
 		},

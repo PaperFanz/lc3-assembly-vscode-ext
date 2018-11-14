@@ -5,15 +5,15 @@
             "add"
         ],
         "body": "ADD\t${1:dest},\t${2:src1},\t${0:src2}",
-        "description": "ADD two registers and put the result in the destination register."
+        "description": "dest <- src1 + src2"
     },
     "Add a register and an immediate value": {
         "prefix":[
             "ADDimm",
             "addimm"
         ],
-        "body": "ADD\t${1:dest},\t${2:src1},\t${0:imm5}",
-        "description": "ADD a register and an immediate value between -16 and 15 and put the result in the destination register."
+        "body": "ADD\t${1:dest},\t${2:src},\t${0:imm5}",
+        "description": "dest <- src + imm5 (imm5 has range [-16,15])"
     },
     "And two registers": {
         "prefix":[
@@ -21,15 +21,15 @@
             "and"
         ],
         "body": "AND\t${1:dest},\t${2:src1},\t${0:src2}",
-        "description": "AND two registers and put the result in the destination register."
+        "description": "dest <- src1 & src2"
     },
     "And a register and an immediate value": {
         "prefix":[
             "AND",
             "and"
         ],
-        "body": "AND\t${1:dest},\t${2:src1},\t${0:imm5}",
-        "description": "AND a register and an immediate value between -16 and 15 and put the result in the destination register."
+        "body": "AND\t${1:dest},\t${2:src},\t${0:imm5}",
+        "description": "dest <- src & imm5 (imm5 has range [-16,15])"
     },
     "Not a register": {
         "prefix": [
@@ -37,7 +37,7 @@
             "not"
         ],
         "body": "NOT\t${1:dest},\t${0:src}",
-        "description": "NOT a register and put the result in the destination register."
+        "description": "dest <- (src)'"
     },
     "Load": {
         "prefix": [
@@ -45,7 +45,7 @@
             "ld"
         ],
         "body": "LD\t${1:dest},\t${0:PCoffset9}",
-        "description": "Load the contents of the memory address specified by the PC plus an offset value between -256 and 255 to the destination register."
+        "description": "dest <- Mem[PC + PCoffset9] (PCoffset9 has range [-256,255])"
     },
     "Load relative": {
         "prefix": [
@@ -53,7 +53,7 @@
             "ldr"
         ],
         "body": "LDR\t${1:dest},\t${2:base},\t${0:offset6}",
-        "description": "Load the contents of the memory address specified by the memory address given in the base register plus an offest value between -64 and 63 to the desitnation register."
+        "description": "dest <- Mem[base + offset6] (offset6 has range [-64,63])"
     },
     "Load immediate": {
         "prefix": [
@@ -61,7 +61,7 @@
             "ldi"
         ],
         "body": "LD\t${1:dest},\t${0:PCoffset9}",
-        "description": "Load the contents of the memory address specified by the value stored at the memory address pointed to by the PC plus an offset value between -256 and 255 to the destination register."
+        "description": "dest <- Mem[Mem[PC + PCoffset9]] (PCoffset9 has range [-256,255])"
     },
     "Store": {
         "prefix": [
@@ -69,7 +69,7 @@
             "st"
         ],
         "body": "ST\t${1:src},\t${0:PCoffset9}",
-        "description": "Store the contents of the source register to the memory address specified by the PC plus an offset value between -256 and 255."
+        "description": "Mem[PC + PCoffset9] <- src (PCoffset9 has range [-256,255])"
     },
     "Store relative": {
         "prefix": [
@@ -77,7 +77,7 @@
             "str"
         ],
         "body": "STR\t${1:src},\t${2:base},\t${0:offset6}",
-        "description": "Store the contents of the source register to the memory address specified by the memory address given in the base register plus an offest value between -64 and 63."
+        "description": "Mem[base + offset6] <- src (offset6 has range [-64,63])"
     },
     "Store immediate": {
         "prefix": [
@@ -85,7 +85,7 @@
             "sti"
         ],
         "body": "STI\t${1:src},\t${0:PCoffset9}",
-        "description": "Store the contents of the source register to the memory address specified by the value stored at the memory address pointed to by the PC plus an offset value between -256 and 255."
+        "description": "Mem[Mem[PC + PCoffset9]] <- src (PCoffset9 has range [-256,255])"
     },
     "Load effective address": {
         "prefix": [
@@ -93,7 +93,7 @@
             "lea"
         ],
         "body": "LEA\t${1:dest},\t${0:PCoffset9}",
-        "description": "Load the memory address specified by the PC plus an offset value between -256 and 255. (NOTE: NOT the value stored, the actual address)"
+        "description": "dest <- PC + PCoffset9 (PCoffset9 has range [-256,255])"
     },
     "Break": {
         "prefix": [
@@ -101,7 +101,7 @@
             "br"
         ],
         "body": "BR${1:nzp}\t${0:PCoffset9}",
-        "description": "Sets the PC to the memory address specified by the PC plus an offset value between -256 and 255 if the condition codes in the PSR match the operation statement."
+        "description": "if flags are set: PC <- PC + PCoffset9 (PCoffset9 has range [-256,255])"
     },
     "Jump": {
         "prefix": [
@@ -109,7 +109,7 @@
             "jmp"
         ],
         "body": "JMP\t${0:src}",
-        "description": "Sets the PC to the value stored in the specified source register."
+        "description": "PC <- src"
     },
     "Return": {
         "prefix": [
@@ -117,7 +117,15 @@
             "ret"
         ],
         "body": "RET$0",
-        "description": "Sets the PC to the value stored in register 7."
+        "description": "PC <- R7"
+    },
+    "Return from interrupt": {
+        "prefix": [
+            "RTI",
+            "rti"
+        ],
+        "body": "RTI$0",
+        "description": ""
     },
     "Jump to subroutine": {
         "prefix": [
@@ -125,7 +133,7 @@
             "jsr"
         ],
         "body": "JSR\t${0:PCoffset11}",
-        "description": "Stores the current PC into register 7 and sets the PC to the address specified by the current PC plus an offset value between -1024 and 1023."
+        "description": "R7 <- PC; PC <- PC + PCoffset11 (PCoffset11 has range [-1024,1023])"
     },
     "Jump to sobroutine register":{
         "prefix": [
@@ -133,7 +141,7 @@
             "jsrr"
         ],
         "body": "JSRR\t${0:src}",
-        "description": "Stores the current PC into register 7 and sets the PC to the value of the specified source register."
+        "description": "R7 <- PC; PC <- src"
     },
     "System call": {
         "prefix": [
@@ -141,7 +149,7 @@
             "trap"
         ],
         "body": "TRAP\tx${0:trapvect}",
-        "description": "Call one of the available subroutines. Available trapvect values are: x20, x21, x22, x23, and x25, corresponding to GETC, OUT, PUTS, IN, and HALT."
+        "description": "R7 <- PC; PC <- ZEXT[trapvect]"
     },
     "Origin and End": {
         "prefix": [
