@@ -43,15 +43,15 @@
 				},
 				{
 					"name": "constant.numeric.hex",
-					"match": "[x][0-9]+"
+					"match": "[x][A-Za-z0-9]+"
 				},
 				{
 					"name": "constant.numeric.dec",
 					"match": "[0-9]+"
 				},
 				{
-					"name": "support.variable.lc3asm",
-					"match": "[A-Za-z][A-Za-z0-9]"
+					"name": "constant.character",
+					"match": "[A-Za-z][A-Za-z0-9_]+"
 				}
 			]
 		},

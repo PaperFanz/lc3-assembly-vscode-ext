@@ -4,6 +4,11 @@
 
 - Assembler utility
 
+## [1.4.1] 11-16-18
+
+- Label highlights excluding last character fixed
+- Underscores will no longer separate two labels
+
 ## [1.4.0] 11-14-18
 
 - Snippet for RTI added
