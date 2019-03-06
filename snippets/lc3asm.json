@@ -159,6 +159,22 @@
         "body": ".ORIG\tx${1:3000}\n\t$0\n.END",
         "description": "Tells the assembler where the program begins and ends."
     },
+    "Rename a register": {
+        "prefix": [
+            ".ALIAS",
+            ".alias"
+        ],
+        "body": ".ALIAS\t${1:R0},\t${0,count}",
+        "description": "Renames the register idicated by the first argument to the second argument."
+    },
+    "Define a macro": {
+        "prefix": [
+            ".MACRO",
+            ".macro"
+        ],
+        "body": ".MACRO\t${1:INC}\t${0:\"ADD R0, R0, 1\"}",
+        "description": "Replaces every instance of the first argument with the second argument."
+    },
     "Fill": {
         "prefix": [
             ".FILL",

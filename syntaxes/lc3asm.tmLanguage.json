@@ -14,27 +14,27 @@
 			"patterns": [
 				{
 					"name": "keyword.control.lc3asm",
-					"match": "\\b(BR|BRn|BRz|BRp|BRnz|BRnp|BRzp|BRnzp|JMP|RET|JSR|JSRR|RTI)\\b"
+					"match": "\\b(BR|BRn|BRz|BRp|BRnz|BRnp|BRzp|BRnzp|JMP|RET|JSR|JSRR|RTI|br|brn|brz|brp|brnz|brnp|brzp|brnzp|jmp|ret|jsr|jsrr|rti)\\b"
 				},
 				{
 					"name": "support.other.lc3asm",
-					"match": "\\b(TRAP|GETC|OUT|PUTS|IN|HALT)\\b"
+					"match": "\\b(TRAP|GETC|OUT|PUTS|IN|HALT|trap|getc|out|puts|in|halt)\\b"
 				},
 				{
 					"name": "entity.name.function.logimaths.lc3asm",
-					"match": "\\b(NOT|AND|ADD)\\b"
+					"match": "\\b(NOT|AND|ADD|not|and|add)\\b"
 				},
 				{
 					"name": "storage.operation.datamv.lc3asm",
-					"match": "\\b(LD|LDR|LDI|ST|STR|STI|LEA)\\b"
+					"match": "\\b(LD|LDR|LDI|ST|STR|STI|LEA|ld|ldr|ldi|st|str|sti|lea)\\b"
 				},
 				{
 					"name": "keyword.pseudoop.lc3asm",
-					"match": "\\b(ORIG|FILL|BLKW|STRINGZ|END)\\b"
+					"match": "\\b(ORIG|ALIAS|MACRO|FILL|BLKW|STRINGZ|END|orig|alias|macro|fill|blkw|stringz|end)\\b"
 				},
 				{
 					"name": "variable.register.lc3asm",
-					"match": "\\b(R0|R1|R2|R3|R4|R5|R6|R7)\\b"
+					"match": "[rR][0-7]"
 				},
 				{
 					"name": "comment.line.lc3asm",
@@ -43,7 +43,7 @@
 				},
 				{
 					"name": "constant.numeric.hex",
-					"match": "[x][A-Za-z0-9]+"
+					"match": "[x][A-Fa-f0-9]+"
 				},
 				{
 					"name": "constant.numeric.dec",

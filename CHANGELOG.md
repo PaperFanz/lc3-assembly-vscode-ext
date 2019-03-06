@@ -2,7 +2,11 @@
 
 ## [Unreleased]
 
-- Assembler utility
+## [2.0.0] 02-05-18
+
+- Assembler utility released [here](https://github.com/PaperFanz/laser)
+- Provide highlighting and snippets for new language features
+- Add highlighting for lowercase tokens
 
 ## [1.4.1] 11-16-18
 

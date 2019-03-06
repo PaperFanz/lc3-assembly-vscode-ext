@@ -1,46 +1,52 @@
 {
-    "name": "lc3-assembly",
-    "displayName": "LC3 Assembly",
-    "description": "Syntax highlighting for LC3 assembly language used in computer engineering education.",
-    "version": "1.4.1",
-    "icon": "lc3-assembly-icon.png",
-    "publisher": "PaperFanz",
-    "repository": {
-        "type": "Github",
-        "url": "https://github.com/PaperFanz/lc3-assembly-vscode-ext"
-    },
-    "engines": {
-        "vscode": "^1.18.0"
-    },
-    "categories": [
-        "Programming Languages", "Snippets"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "lc3asm",
-                "aliases": [
-                    "LC3 Assembly",
-                    "lc3asm"
-                ],
-                "extensions": [
-                    ".asm"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "lc3asm",
-                "scopeName": "source.asm",
-                "path": "./syntaxes/lc3asm.tmLanguage.json"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "lc3asm",
-                "path": "./snippets/lc3asm.json"
-            }
-        ]
-    }
+	"name": "lc3-assembly",
+	"displayName": "LC3 Assembly",
+	"description": "Syntax highlighting for LC3 assembly language used in computer engineering education.",
+	"version": "2.0.0",
+	"icon": "lc3-assembly-icon.png",
+	"publisher": "PaperFanz",
+	"repository": {
+		"type": "Github",
+		"url": "https://github.com/PaperFanz/lc3-assembly-vscode-ext"
+	},
+	"engines": {
+		"vscode": "^1.18.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "lc3asm",
+				"aliases": [
+					"LC3 Assembly",
+					"lc3asm"
+				],
+				"extensions": [
+					".asm"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "lc3asm",
+				"scopeName": "source.asm",
+				"path": "./syntaxes/lc3asm.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "lc3asm",
+				"path": "./snippets/lc3asm.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "01312745-961c-435d-9a29-b5fd640e0e65",
+		"publisherDisplayName": "PaperFanz",
+		"publisherId": "d8b092d5-da0f-4b70-bf67-3b7de8cbd810"
+	}
 }
