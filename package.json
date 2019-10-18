@@ -2,7 +2,7 @@
 	"name": "lc3-assembly",
 	"displayName": "LC3 Assembly",
 	"description": "Syntax highlighting for LC3 assembly language used in computer engineering education.",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"icon": "lc3-assembly-icon.png",
 	"publisher": "PaperFanz",
 	"repository": {
@@ -16,6 +16,10 @@
 		"Programming Languages",
 		"Snippets"
 	],
+	"activationEvents": [
+        "onLanguage:lc3asm"
+	],
+	"main": "./out/main.js",
 	"contributes": {
 		"languages": [
 			{
@@ -42,7 +46,59 @@
 				"language": "lc3asm",
 				"path": "./snippets/lc3asm.json"
 			}
-		]
+		],
+		"commands": [
+            {
+                "command": "lc3asm.assemble",
+                "title": "Assemble"
+            },
+            {
+                "command": "lc3asm.assembleProject",
+                "title": "Assemble Project"
+            },
+            {
+                "command": "lc3asm.assembleFolder",
+                "title": "Assemble Current Directory"
+            },
+            {
+                "command": "lc3asm.assembleFolderProject",
+                "title": "Assemble Current Directory as Project"
+            }
+        ],
+        "keybindings":[
+            {
+                "command": "lc3asm.assemble",
+                "key": "alt+shift+a"
+            },
+            {
+                "command": "lc3asm.assembleProject",
+                "key": "alt+shift+p"
+            },
+            {
+                "command": "lc3asm.assembleFolder",
+                "key": "alt+shift+d"
+            },
+            {
+                "command": "lc3asm.assembleFolderProject",
+                "key": "alt+shift+b"
+            }
+        ]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.37.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.0.2"
 	},
 	"__metadata": {
 		"id": "01312745-961c-435d-9a29-b5fd640e0e65",

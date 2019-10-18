@@ -30,8 +30,12 @@
 				},
 				{
 					"name": "keyword.pseudoop.lc3asm",
-					"match": "\\b(ORIG|ALIAS|MACRO|FILL|BLKW|STRINGZ|END|orig|alias|macro|fill|blkw|stringz|end)\\b"
-				},
+					"match": "\\b(ORIG|FILL|BLKW|STRINGZ|END|orig|fill|blkw|stringz|end)\\b"
+                },
+                {
+                    "name": "keyword.preprocessor.lc3asm",
+                    "match": "\\b(ALIAS|MACRO|IMPORT|EXPORT|alias|macro|import|export)\\b"
+                },
 				{
 					"name": "variable.register.lc3asm",
 					"match": "[rR][0-7]"
@@ -43,7 +47,7 @@
 				},
 				{
 					"name": "constant.numeric.hex",
-					"match": "[x][A-Fa-f0-9]+"
+					"match": "[x][A-Fa-f0-9]{1,4}"
 				},
 				{
 					"name": "constant.numeric.dec",

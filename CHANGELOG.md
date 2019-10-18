@@ -2,7 +2,12 @@
 
 ## [Unreleased]
 
-## [2.0.0] 02-05-18
+## [2.1.0] 10-18-19
+
+- `Assemble` and `Assemble Project` commands added (Just pull up command pallete and type 'assemble')
+- Syntax highlighting updated to match new assembler features
+
+## [2.0.0] 02-05-19
 
 - Assembler utility released [here](https://github.com/PaperFanz/laser)
 - Provide highlighting and snippets for new language features
