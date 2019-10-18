@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [2.1.0] 10-18-19
+## [2.1.2] 10-18-19
 
 - `Assemble` and `Assemble Project` commands added (Just pull up command pallete and type 'assemble')
 - Syntax highlighting updated to match new assembler features
