@@ -44,12 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
                 if (fileUri && fileUri[0]) {
                     let selectedfiles = "";
                     fileUri.forEach(file => {
-
-                        if (convertFS) {
-                            selectedfiles += convertwslfs (file.fsPath) + " ";
-                        } else {
-                            selectedfiles += file.fsPath + " ";
-                        }
+                        selectedfiles += `"${convertFS ? convertwslfs(file.fsPath) : file.fsPath}" `;
                     });
 
                     terminal.sendText("laser -a " + selectedfiles, true);
@@ -67,12 +62,7 @@ export function activate(context: vscode.ExtensionContext) {
                 if (fileUri && fileUri[0]) {
                     let selectedfiles = "";
                     fileUri.forEach(file => {
-
-                        if (convertFS) {
-                            selectedfiles += convertwslfs (file.fsPath) + " ";
-                        } else {
-                            selectedfiles += file.fsPath + " ";
-                        }
+                        selectedfiles += `"${convertFS ? convertwslfs(file.fsPath) : file.fsPath}" `;
                     });
 
                     terminal.sendText("laser -p " + selectedfiles, true);

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.deactivate = exports.activate = void 0;
 const vscode = require("vscode");
 let workspacefolder = vscode.Uri.file(vscode.env.appRoot);
 if (vscode.workspace.workspaceFolders) {
@@ -36,12 +37,7 @@ function activate(context) {
             if (fileUri && fileUri[0]) {
                 let selectedfiles = "";
                 fileUri.forEach(file => {
-                    if (convertFS) {
-                        selectedfiles += convertwslfs(file.fsPath) + " ";
-                    }
-                    else {
-                        selectedfiles += file.fsPath + " ";
-                    }
+                    selectedfiles += `"${convertFS ? convertwslfs(file.fsPath) : file.fsPath}" `;
                 });
                 terminal.sendText("laser -a " + selectedfiles, true);
             }
@@ -56,12 +52,7 @@ function activate(context) {
             if (fileUri && fileUri[0]) {
                 let selectedfiles = "";
                 fileUri.forEach(file => {
-                    if (convertFS) {
-                        selectedfiles += convertwslfs(file.fsPath) + " ";
-                    }
-                    else {
-                        selectedfiles += file.fsPath + " ";
-                    }
+                    selectedfiles += `"${convertFS ? convertwslfs(file.fsPath) : file.fsPath}" `;
                 });
                 terminal.sendText("laser -p " + selectedfiles, true);
             }
